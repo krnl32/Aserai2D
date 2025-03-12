@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Renderer/Renderer2D.h"
 
 #include <glad/glad.h>
@@ -73,12 +72,12 @@ namespace Aserai2D
 		for (uint32_t i = 0; i < 32; i++) samplers[i] = i;
 
 		// Quad Shader
-		m_QuadShader = std::make_unique<Shader>("../Assets/Shaders/QuadVertex.glsl", "../Assets/Shaders/QuadFragment.glsl");
+		m_QuadShader = std::make_unique<Shader>("../../../../Assets/Shaders/QuadVertex.glsl", "../../../../Assets/Shaders/QuadFragment.glsl");
 		m_QuadShader->Bind();
 		m_QuadShader->SetIntArray("u_Textures", samplers, m_MaxTextureCount);
 
 		// Line Shader
-		m_LineShader = std::make_unique<Shader>("../Assets/Shaders/LineVertex.glsl", "../Assets/Shaders/LineFragment.glsl");
+		m_LineShader = std::make_unique<Shader>("../../../../Assets/Shaders/LineVertex.glsl", "../../../../Assets/Shaders/LineFragment.glsl");
 		m_LineShader->Bind();
 
 		// Texture Batch

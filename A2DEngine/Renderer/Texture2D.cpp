@@ -1,10 +1,10 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Renderer/Texture2D.h"
 #include "A2DEngine/Core/Logger.h"
 #include "A2DEngine/Core/Assertion.h"
 
 #include <glad/glad.h>
-#include <stb/stb_image.h>
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
 
 namespace Aserai2D
 {
@@ -50,7 +50,7 @@ namespace Aserai2D
 		}
 		else
 		{
-			ASERAI_LOG_ERROR("TEXTURE2D WIDTH: {}, HEIGHT: {}, INVALID CHANNELS: {}", m_Width, m_Height, m_Channels);
+			ASERAI_LOG_ERROR("TEXTURE2D WIDTH: {}, HEIGHT: {}, INVALID CHANNELS: {}, REASON: {}", m_Width, m_Height, m_Channels, stbi_failure_reason());
 		}
 
 		glGenTextures(1, &m_TextureID);

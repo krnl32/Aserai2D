@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 namespace Aserai2D
 {
 	enum KeyCode : uint16_t

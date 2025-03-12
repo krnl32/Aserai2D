@@ -1,6 +1,5 @@
 #pragma once
 
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Asset/TextureAsset.h"
 
 namespace Aserai2D

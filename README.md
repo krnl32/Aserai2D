@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://aserai.com/Aserai2D">
-    <img src="Resources/Branding/AseraiBannerSmall.png" alt="Logo" width=300 height=180>
+  <a href="Resources/Branding/AseraiBannerSmall.png">
+    <img src="Resources/Branding/AseraiBannerSmall.png" alt="Logo" width=900 height=540>
   </a>
 
   <h3 align="center">Aserai2D</h3>
@@ -26,7 +26,7 @@ Aserai2D Game Engine an upcoming 2D Game Engine.
 - 2D Renderer
 - Scene System
 - Entity Component System
-- ROADMAP: https://trello.com/b/ufIdt7g1/aserai
+- ROADMAP: 
 
 ## Bugs and feature requests
 

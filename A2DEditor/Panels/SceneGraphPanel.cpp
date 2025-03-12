@@ -1,4 +1,3 @@
-#include "A2DEditorPCH.h"
 #include "A2DEditor/Panels/SceneGraphPanel.h"
 
 #include <A2DEngine/Input/InputManager.h>

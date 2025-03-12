@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Renderer/VertexBufferLayout.h"
 
 #include <glad/glad.h>

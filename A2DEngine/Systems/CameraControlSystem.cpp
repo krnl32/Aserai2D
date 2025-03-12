@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Systems/CameraControlSystem.h"
 #include "A2DEngine/Input/InputManager.h"
 #include "A2DEngine/Components/TransformComponent.h"

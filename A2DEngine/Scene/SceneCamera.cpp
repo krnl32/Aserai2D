@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Scene/SceneCamera.h"
 
 #include <glm/gtc/matrix_transform.hpp>

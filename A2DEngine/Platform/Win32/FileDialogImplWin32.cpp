@@ -1,6 +1,6 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Platform/FileDialog.h"
 
+#include <Windows.h>
 #include <commdlg.h>
 
 namespace Aserai2D

@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Scene/Scene.h"
 
 #include "A2DEngine/Systems/MovementSystem.h"
@@ -69,7 +68,7 @@ namespace Aserai2D
 	void Scene::OnViewportResize(uint32_t width, uint32_t height)
 	{
 		m_Viewport = { width, height };
-		auto& cameras = m_Registry->GetEntitiesWithComponent<CameraComponent>();
+		auto cameras = m_Registry->GetEntitiesWithComponent<CameraComponent>();
 		for (auto entity : cameras)
 		{
 			auto component = entity.GetComponent<CameraComponent>();
@@ -94,7 +93,7 @@ namespace Aserai2D
 
 	Entity Scene::GetPrimaryCamera()
 	{
-		auto& cameras = m_Registry->GetEntitiesWithComponent<CameraComponent>();
+		auto cameras = m_Registry->GetEntitiesWithComponent<CameraComponent>();
 		for (auto entity : cameras)
 		{
 			auto component = entity.GetComponent<CameraComponent>();

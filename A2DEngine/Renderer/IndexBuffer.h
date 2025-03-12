@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 namespace Aserai2D
 {
 	class IndexBuffer

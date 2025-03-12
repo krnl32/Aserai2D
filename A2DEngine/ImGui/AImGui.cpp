@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/ImGui/AImGui.h"
 
 #include <imgui.h>
@@ -20,7 +19,7 @@ namespace Aserai2D
 		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
 		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 		ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
-		//ImGui::GetIO().Fonts->AddFontFromFileTTF("../Assets/Fonts/arial.ttf", 16);
+		//ImGui::GetIO().Fonts->AddFontFromFileTTF("../../../../Assets/Fonts/arial.ttf", 16);
 
 		ImGui::StyleColorsDark();
 

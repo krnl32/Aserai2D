@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Renderer/VertexArray.h"
 
 #include <glad/glad.h>

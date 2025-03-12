@@ -2,6 +2,7 @@
 
 #include "A2DEngine/Asset/Asset.h"
 #include "A2DEngine/Renderer/Shader.h"
+#include "A2DEngine/Core/Logger.h"
 
 #include <string>
 #include <unordered_map>
@@ -28,7 +29,7 @@ namespace Aserai2D
 			std::shared_ptr<T> asset = std::make_shared<T>(std::forward<Args>(args)...);
 			std::shared_ptr<Asset> base = std::static_pointer_cast<Asset>(asset);
 			s_Assets[base->GetAssetID()] = asset;
-			ASERAI_LOG_DEBUG("Created Asset({})", base->GetAssetID());
+			ASERAI_LOG_DEBUG("Created Asset({})", (uint64_t)base->GetAssetID());
 			ReloadAsset(base->GetAssetID());
 			return base->GetAssetID();
 		}
@@ -38,7 +39,7 @@ namespace Aserai2D
 		{
 			if (HasAssetID(assetID))
 				return std::dynamic_pointer_cast<T>(s_Assets[assetID]);
-			return false;
+			return nullptr;
 		}
 
 		template<typename T>

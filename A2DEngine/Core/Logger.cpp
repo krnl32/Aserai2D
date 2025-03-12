@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Core/Logger.h"
 
 #include <spdlog/sinks/stdout_color_sinks.h>
@@ -21,6 +20,7 @@ namespace Aserai2D
 		sinks2[0] = std::make_shared<spdlog::sinks::ostream_sink_st>(s_Stream);
 	}
 
+	// TEMPORARY -> SLOWS THINGS DOWN
 	void Logger::SaveLastLog()
 	{
 		s_Logs.push_back(s_Stream.str());

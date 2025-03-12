@@ -1,4 +1,3 @@
-#include "A2DEditorPCH.h"
 #include "A2DEditor/Panels/PanelManager.h"
 
 #include <A2DEngine/Core/Logger.h>

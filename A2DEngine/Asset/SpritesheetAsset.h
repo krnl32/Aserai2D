@@ -6,6 +6,7 @@
 #include <memory>
 #include <array>
 #include <vector>
+#include <string>
 
 namespace Aserai2D
 {

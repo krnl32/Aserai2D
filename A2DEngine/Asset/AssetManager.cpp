@@ -1,6 +1,4 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Asset/AssetManager.h"
-#include "A2DEngine/Core/Logger.h"
 
 namespace Aserai2D
 {

@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Core/EventManager.h"
 
 namespace Aserai2D

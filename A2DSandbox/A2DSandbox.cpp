@@ -1,5 +1,3 @@
-#include "A2DSandboxPCH.h"
-
 #include <A2DEngine/Core/Engine.h>
 #include <A2DEngine/Core/Logger.h>
 #include <A2DEngine/Scene/Scene.h>

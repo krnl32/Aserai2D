@@ -1,10 +1,10 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Systems/RenderSystem.h"
 #include "A2DEngine/Components/TransformComponent.h"
 #include "A2DEngine/Components/SpriteComponent.h"
 #include "A2DEngine/Asset/AssetManager.h"
 
 #include <array>
+#include <algorithm>
 
 namespace Aserai2D
 {

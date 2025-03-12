@@ -1,5 +1,3 @@
-#include "A2DEditorPCH.h"
-
 #include "A2DEditor/Panels/PanelManager.h"
 #include "A2DEditor/Panels/SceneGraphPanel.h"
 #include "A2DEditor/Panels/EntityPropertiesPanel.h"
@@ -58,9 +56,9 @@ namespace Aserai2D
 			m_PanelManager->AddPanel("Console", std::make_shared<ConsolePanel>());
 
 			// TMP
-			auto tankTextureID = AssetManager::CreateAsset<TextureAsset>("../Assets/Spritesheets/top_down_tanks.png");
+			auto tankTextureID = AssetManager::CreateAsset<TextureAsset>("../../../../Assets/Spritesheets/top_down_tanks.png");
 			auto spriteSheetID = AssetManager::CreateAsset<SpritesheetAsset>(tankTextureID, 128, 128, 32, 0);
-			auto& spriteAsset = AssetManager::GetAsset<SpritesheetAsset>(spriteSheetID);
+			auto spriteAsset = AssetManager::GetAsset<SpritesheetAsset>(spriteSheetID);
 
 			Entity player = m_ActiveScene->CreateEntity("player");
 			player.AddComponent<TransformComponent>(glm::vec3(-5.0, 0.0, 0.0), glm::vec3(0.0, 0.0, 1.0), glm::vec3(1.0, 1.0, 1.0), 0.0);
@@ -195,7 +193,7 @@ namespace Aserai2D
 			ImVec2 viewportPosition = ImGui::GetCursorScreenPos();
 			m_ViewportPosition = { viewportPosition.x, viewportPosition.y };
 			m_ActiveScene->SetViewportPosition(m_ViewportPosition);
-			ImGui::Image((void*)m_Framebuffer->GetColorAttachmentRendererID(0), ImVec2(m_Viewport.x, m_Viewport.y), ImVec2(0, 1), ImVec2(1, 0));
+			ImGui::Image((ImTextureID)m_Framebuffer->GetColorAttachmentRendererID(0), ImVec2(m_Viewport.x, m_Viewport.y), ImVec2(0, 1), ImVec2(1, 0));
 			ImGui::End();
 			ImGui::PopStyleVar();
 

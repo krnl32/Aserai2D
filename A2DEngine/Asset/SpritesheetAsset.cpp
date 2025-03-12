@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Asset/SpritesheetAsset.h"
 #include "A2DEngine/Asset/AssetManager.h"
 #include "A2DEngine/Asset/TextureAsset.h"
@@ -24,7 +23,7 @@ namespace Aserai2D
 	bool SpritesheetAsset::Reload()
 	{
 		uint32_t textureX = 0, textureY = 0;
-		auto& texture = AssetManager::GetAsset<TextureAsset>(m_Texture)->GetTexture();
+		auto texture = AssetManager::GetAsset<TextureAsset>(m_Texture)->GetTexture();
 
 		for (uint32_t i = 0; i < m_SpriteCount; i++)
 		{

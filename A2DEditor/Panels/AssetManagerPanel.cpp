@@ -1,4 +1,3 @@
-#include "A2DEditorPCH.h"
 #include "A2DEditor/Panels/AssetManagerPanel.h"
 
 #include <A2DEngine/Core/Logger.h>
@@ -47,7 +46,7 @@ namespace Aserai2D
 				if (ImGui::Button("Close"))
 					ImGui::CloseCurrentPopup();
 
-				if (ImGui::ImageButton("##TextureAdd", (void*)0, ImVec2(100.f, 100.f), ImVec2(0, 1), ImVec2(1, 0)))
+				if (ImGui::ImageButton("##TextureAdd", (ImTextureID)0, ImVec2(100.f, 100.f), ImVec2(0, 1), ImVec2(1, 0)))
 				{
 					std::string texturePath = FileDialog::OpenFile("Image Files (*.png, *.jpg, *.jpeg)\0*.png;*.jpg;*.jpeg\0");
 					if (!texturePath.empty())
@@ -63,7 +62,7 @@ namespace Aserai2D
 				bool open = ImGui::TreeNodeEx((void*)(uint64_t)asset->GetAssetID(), flags, (asset->GetTexturePath() + ":" + std::to_string((uint64_t)asset->GetAssetID())).c_str());
 				if (open)
 				{
-					ImGui::ImageButton(("##TextureList" + std::to_string(asset->GetAssetID())).c_str(), (void*)(asset->IsLoaded() ? asset->GetTexture()->GetID() : 0), ImVec2(100.f, 100.f), ImVec2(0, 1), ImVec2(1, 0));
+					ImGui::ImageButton(("##TextureList" + std::to_string(asset->GetAssetID())).c_str(), (ImTextureID)(asset->IsLoaded() ? asset->GetTexture()->GetID() : 0), ImVec2(100.f, 100.f), ImVec2(0, 1), ImVec2(1, 0));
 					ImGui::TreePop();
 				}
 			}
@@ -90,7 +89,7 @@ namespace Aserai2D
 					for (uint32_t i = 0; i < spritesheetAsset->GetSpriteCount(); i++)
 					{
 						auto& textureUV = spritesheetAsset->GetSprite(i).TextureUV;
-						if (ImGui::ImageButton((std::string("##Texture" + std::to_string(i))).c_str(), (void*)texture->GetID(), ImVec2(50.0f, 50.0f), ImVec2(textureUV[0].x, textureUV[0].y), ImVec2(textureUV[2].x, textureUV[2].y)))
+						if (ImGui::ImageButton((std::string("##Texture" + std::to_string(i))).c_str(), (ImTextureID)texture->GetID(), ImVec2(50.0f, 50.0f), ImVec2(textureUV[0].x, textureUV[0].y), ImVec2(textureUV[2].x, textureUV[2].y)))
 						{
 							ASERAI_LOG_INFO("Generating Sprite({})", i);
 							Entity entity = GenerateSpriteEntity(spritesheetAsset->GetSprite(i), glm::vec3(1.0f, 1.0f, 1.0f));

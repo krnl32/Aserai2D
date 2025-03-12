@@ -1,4 +1,3 @@
-#include "A2DEnginePCH.h"
 #include "A2DEngine/Renderer/IndexBuffer.h"
 
 #include <glad/glad.h>

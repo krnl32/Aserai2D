@@ -1,4 +1,3 @@
-#include "A2DEditorPCH.h"
 #include "A2DEditor/Panels/EntityPropertiesPanel.h"
 #include "A2DEditor/Panels/SceneGraphPanel.h"
 
@@ -142,7 +141,7 @@ namespace Aserai2D
 
 				ImGui::Text("Texture");
 				ImGui::SameLine();
-				if (ImGui::ImageButton("##Texture", (void*)((component.Texture && AssetManager::IsAssetLoaded(component.Texture)) ? AssetManager::GetAsset<TextureAsset>(component.Texture)->GetTexture()->GetID() : 0), ImVec2(100.f, 100.f), ImVec2(0, 1), ImVec2(1, 0)))
+				if (ImGui::ImageButton("##Texture", (ImTextureID)((component.Texture && AssetManager::IsAssetLoaded(component.Texture)) ? AssetManager::GetAsset<TextureAsset>(component.Texture)->GetTexture()->GetID() : 0), ImVec2(100.f, 100.f), ImVec2(0, 1), ImVec2(1, 0)))
 					ImGui::OpenPopup("AddSpriteTexturePopup");
 
 				if (ImGui::BeginPopupModal("AddSpriteTexturePopup"))
@@ -153,11 +152,11 @@ namespace Aserai2D
 					auto& itemSpacing = ImGui::GetStyle().ItemSpacing;
 					float windowX2 = ImGui::GetWindowPos().x + ImGui::GetWindowSize().x;
 
-					auto& assets = AssetManager::GetAssets<TextureAsset>();
+					auto assets = AssetManager::GetAssets<TextureAsset>();
 					for (int i = 0; i < assets.size(); i++)
 					{
 						auto& asset = assets[i];
-						if (ImGui::ImageButton(("##TextureAddSprite" + std::to_string((uint64_t)asset->GetAssetID())).c_str(), (void*)(asset->IsLoaded() ? asset->GetTexture()->GetID() : 0), ImVec2(100.f, 100.f), ImVec2(0, 1), ImVec2(1, 0)))
+						if (ImGui::ImageButton(("##TextureAddSprite" + std::to_string((uint64_t)asset->GetAssetID())).c_str(), (ImTextureID)(asset->IsLoaded() ? asset->GetTexture()->GetID() : 0), ImVec2(100.f, 100.f), ImVec2(0, 1), ImVec2(1, 0)))
 							component.Texture = asset->GetAssetID();
 
 						float lastX2 = ImGui::GetItemRectMax().x;
