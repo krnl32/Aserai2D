@@ -44,7 +44,6 @@ namespace Aserai2D
 			m_Framebuffer = std::make_shared<Framebuffer>(FramebufferProperties{ m_Properties.WindowProperties.Width, m_Properties.WindowProperties.Height, { FramebufferAttachmentFormat::RGBA8, FramebufferAttachmentFormat::RED_INTEGER } });
 			m_EditorCamera = std::make_shared<EditorCamera>();
 			m_ActiveScene->SetEditorCamera(m_EditorCamera);
-			m_ActiveScene->SetGridLinesState(true);
 			m_PanelManager = std::make_shared<PanelManager>();
 
 			m_Renderer2D->SetAlphaBlending(true);
@@ -105,7 +104,7 @@ namespace Aserai2D
 		{
 			m_Framebuffer->Bind();
 			renderer->ResetRenderStats();
-			renderer->SetClearColor({ 1.0f, 1.0f, 1.0f, 1.0f });
+			renderer->SetClearColor({ 0.2f, 0.3f, 0.3f, 1.0f });
 			renderer->Clear();
 			m_Framebuffer->ClearColorAttachment(1, -1);
 

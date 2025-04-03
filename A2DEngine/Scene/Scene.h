@@ -45,9 +45,6 @@ namespace Aserai2D
 		std::shared_ptr<EditorCamera> GetEditorCamera();
 		void SetEditorCamera(const std::shared_ptr<EditorCamera>& editorCamera);
 
-		void SetGridLinesState(bool state);
-		void RenderGridLines(const std::shared_ptr<Renderer2D>& renderer, const glm::vec4& color = { 0.0f, 0.0f, 0.0f, 1.0f });
-
 		template<typename T>
 		void EnableSystem()
 		{
